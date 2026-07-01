@@ -1,0 +1,243 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.filename {
+  font-size: 0.875rem;
+  color: #6b7280;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.badge {
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.gpsInfo {
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: all 0.2s;
+}
+
+.gpsInfo:hover {
+  color: #059669;
+  transform: scale(1.02);
+}
+
+.noGpsInfo {
+  color: #ca8a04;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.processed {
+  color: #2563eb;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.notProcessed {
+  color: #9ca3af;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Контейнер для изображения с бейджем */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 12rem;
+  overflow: hidden;
+  background-color: #f3f4f6;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+/* Бейдж с количеством мусора на изображении */
+.wasteBadge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  letter-spacing: 0.5px;
+}
+
+/* Modal styles */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.modalContent {
+  max-width: 56rem;
+  max-height: 100%;
+  position: relative;
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.modalClose {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: white;
+  font-size: 1.875rem;
+  transition: color 0.2s;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 9999px;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.modalClose:hover {
+  color: #d1d5db;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 640px) {
+  .wasteBadge {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+  }
+  
+  .imageContainer {
+    height: 10rem;
+  }
+}
+
+/* Анимации */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+.wasteBadge {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Стили для пустого состояния */
+.emptyState {
+  text-align: center;
+  padding: 3rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+/* Стили для скролла в модальном окне */
+.modalContent {
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}

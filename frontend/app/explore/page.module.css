@@ -1,0 +1,471 @@
+.main {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Loading */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #059669;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Header */
+.header {
+  border-radius: 12px;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Sort Bar */
+.sortBar {
+  background: white;
+  border-radius: 16px;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sortLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.sortButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.sortBtn {
+  padding: 8px 20px;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sortBtn:hover {
+  background: #d6eede;
+}
+
+.sortBtnActive {
+  background: #059669;
+  color: white;
+}
+
+.sortBtnActive:hover {
+  background: #047857;
+}
+
+.totalCount {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* Missions List */
+.missionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.missionCard {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.missionCard:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Preview */
+.cardPreview {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f3f4f6;
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.previewPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #9ca3af;
+  background: #f3f4f6;
+}
+
+/* Card Content */
+.cardContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.missionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* Блок "Сессия содержит" */
+.sessionContains {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+  padding: 10px 0;
+  font-size: 13px;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.containsLabel {
+  font-weight: 600;
+  color: #059669;
+  margin-right: 4px;
+}
+
+.sessionContains span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.missionDescription {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* User Info */
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.userAvatar {
+  width: 28px;
+  height: 28px;
+  background: #e5e7eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.userAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.userName {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+/* Card Action */
+.cardAction {
+  flex-shrink: 0;
+}
+
+.openBtn {
+  padding: 8px 20px;
+  background: #059669;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.openBtn:hover {
+  background: #047857;
+  transform: translateY(-1px);
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 20px;
+}
+
+.emptyState h3 {
+  font-size: 30px;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.emptyState p {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.createBtn {
+  padding: 12px 24px;
+  background: #059669;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.createBtn:hover {
+  background: #047857;
+  transform: translateY(-2px);
+}
+
+/* Карта */
+.mapSection {
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.mapToggleBtn {
+  width: 100%;
+  padding: 14px 20px;
+  background: #f8fafc;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.mapToggleBtn:hover {
+  background: #f1f5f9;
+}
+
+.mapToggleText {
+  color: #1f2937;
+}
+
+.mapContainer {
+  height: 400px;
+  width: 100%;
+}
+
+.mapFrame {
+  width: 100%;
+  height: 100%;
+}
+
+.mapLoading {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  gap: 12px;
+}
+
+.spinnerSmall {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #059669;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.mapPlaceholder {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  color: #94a3b8;
+  gap: 12px;
+}
+
+.mapPlaceholder span {
+  font-size: 48px;
+}
+
+.mapPlaceholderHint {
+  font-size: 12px;
+  color: #cbd5e1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .headerContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .sortBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sortButtons {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .sortBtn {
+    flex: 1;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .missionCard {
+    flex-wrap: wrap;
+    padding: 12px;
+  }
+
+  .cardPreview {
+    width: 80px;
+    height: 80px;
+  }
+
+  .cardAction {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .openBtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sessionContains {
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .totalCount {
+    font-size: 12px;
+  }
+}
+
+.loadingContainer p{
+  color: #047857;
+}

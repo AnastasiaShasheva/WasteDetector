@@ -1,0 +1,167 @@
+/* components/Map.module.css */
+.container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.noDataContainer {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.warning {
+  background-color: #fefce8;
+  border-left: 4px solid #fbbf24;
+  padding: 1rem;
+}
+
+.warningIcon {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+}
+
+.warningText {
+  margin-left: 0.75rem;
+  font-size: 0.875rem;
+  color: #a16207;
+}
+
+.noDataContent {
+  height: 400px;
+  width: 100%;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noDataEmoji {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.noDataTitle {
+  text-align: center;
+  color: #6b7280;
+}
+
+.noDataSubtitle {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.toolbar {
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  font-size: 0.875rem;
+  color: #4b5563;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.stats {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.legend {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.legendColor {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+}
+
+.legendColorGreen {
+  composes: legendColor;
+  background-color: #22c55e;
+}
+
+.legendColorBlue {
+  composes: legendColor;
+  background-color: #3b82f6;
+}
+
+.legendColorOrange {
+  composes: legendColor;
+  background-color: #f97316;
+}
+
+.legendColorRed {
+  composes: legendColor;
+  background-color: #ef4444;
+}
+
+.legendLabel {
+  font-size: 0.75rem;
+}
+
+.mapContainer {
+  height: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.footer {
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  font-size: 0.75rem;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+}
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  gap: 16px;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  gap: 16px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

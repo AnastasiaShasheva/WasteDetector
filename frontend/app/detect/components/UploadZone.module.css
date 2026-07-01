@@ -1,0 +1,52 @@
+/* components/UploadZone.module.css */
+.dropzone {
+  border: 2px dashed #d1d5db;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: white;
+}
+
+.dropzoneActive {
+  border-color: #22c55e;
+  background-color: #f0fdf4;
+}
+
+.dropzoneLoading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #6b7280;
+}
+
+.hint {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin-top: 1rem;
+}
+
+.loadingText {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.loadingEmoji {
+  font-size: 1.875rem;
+}

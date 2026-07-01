@@ -1,0 +1,1475 @@
+/* app/page.module.css */
+
+.main {
+  min-height: 100vh;
+}
+
+/* Hero */
+.banner {
+  height: 80vh;
+  background-image: url('/les.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 21, 12, 0.7);
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.bannerTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  animation: fadeUp 0.6s ease;
+}
+
+.bannerSubtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  animation: fadeUp 0.6s ease 0.1s backwards;
+}
+
+.startButton {
+  background: white;
+  color: #475729;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  animation: fadeUp 0.6s ease 0.2s backwards;
+}
+
+.startButton:hover {
+  background: #f0f0f0;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Блок с информацией - УБИРАЕМ background-attachment: fixed для производительности */
+.blur {
+  background-image: url('/info6.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  position: relative;
+}
+
+/* Затемнение фона - убираем backdrop-filter для производительности */
+.blur::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 34, 28, 0.85);
+}
+
+.info {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section {
+  padding: 2.5rem;
+  border-radius: 24px;
+  font-size: 1.7rem;
+  line-height: 1.7;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, monospace;
+  transition: transform 0.2s;
+}
+
+/* Твои цвета для секций */
+.forest {
+  background: rgba(53, 89, 63, 0.95);
+  color: white;
+}
+
+.dump {
+  background: rgba(23, 44, 34, 0.95);
+  color: #e0e0e0;
+}
+
+.goal {
+  background: rgba(68, 125, 17, 0.95);
+  color: white;
+}
+
+.accent {
+  font-weight: 700;
+  color: #ffd966;
+}
+
+.goal h3 {
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.howWork {
+  color: #9bd8ab;
+  padding: 2rem 2rem;
+  font-size: 25px;
+  background-color: #35593fd9;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, monospace;
+  font-weight: 600;
+}
+
+@media (min-width: 1400px) {
+  .howWork {
+    padding: 2rem 15rem;
+  }
+}
+
+.howWork h1 {
+  font-size: 40px;
+  padding: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.part {
+  padding: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(23, 44, 34, 0.6);
+  border-radius: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.part p {
+  flex: 1;
+  min-width: 200px;
+  font-size: 30px;
+}
+
+@media (max-width: 992px) {
+  .part p {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .part p {
+    font-size: 18px;
+  }
+
+  .howWork h1 {
+    font-size: 28px;
+  }
+}
+
+.part img {
+  width: 20rem;
+  max-width: 100%;
+  height: auto;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.howWork strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  font-size: 50px;
+  background-color: rgba(23, 44, 34, 0.9);
+  border-radius: 100%;
+  flex-shrink: 0;
+}
+
+/* Анимации */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+  .section {
+    padding: 2rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerTitle {
+    font-size: 2.2rem;
+  }
+
+  .bannerSubtitle {
+    font-size: 1rem;
+  }
+
+  .info {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .section {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .goal h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Адаптив для блока howWork */
+@media (max-width: 1200px) {
+  .howWork {
+    padding: 2rem 5rem;
+  }
+
+  .part p {
+    width: 35rem;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .howWork {
+    padding: 2rem 2rem;
+  }
+
+  .part {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .part p {
+    width: 100%;
+    font-size: 22px;
+    margin: 1rem 0;
+  }
+
+  .howWork strong {
+    margin-right: 0;
+  }
+
+  .part img {
+    width: 15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .howWork {
+    padding: 1rem;
+    font-size: 20px;
+  }
+
+  .howWork h1 {
+    font-size: 28px;
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .part {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .part p {
+    font-size: 18px;
+  }
+
+  .howWork strong {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 35px;
+  }
+
+  .part img {
+    width: 12rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .howWork strong {
+    width: 3rem;
+    height: 3rem;
+    font-size: 28px;
+  }
+
+  .part img {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .part p {
+    font-size: 16px;
+  }
+}
+
+/* ========== КАРУСЕЛЬ (исправленная версия) ========== */
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+/* Затемнение фона */
+.carouselContainer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 1;
+}
+
+/* Фоны для разных слайдов */
+.heroBg {
+  background-image: url('/les.jpg');
+}
+
+.forestBg {
+  background-image: url('/les.jpg');
+}
+
+.dumpBg {
+  background-image: url('/les.jpg');
+}
+
+.goalBg {
+  background-image: url('/les.jpg');
+}
+
+/* Контент поверх фона - ЦЕНТРИРОВАНИЕ */
+.carouselContainer .overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: none;
+  padding: 0;
+}
+
+.contentWrapper {
+  max-width: 800px;
+  width: 100%;
+  padding: 2rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Кнопки навигации карусели с увеличенной зоной касания */
+.carouselContainer .carouselButton {
+  position: absolute;
+  top: 0;
+  transform: none;
+  background-color: transparent;
+  border: none;
+  width: 15%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.carouselContainer .carouselButton:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Стрелка внутри кнопки */
+.carouselContainer .carouselButton span {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.carouselContainer .carouselButton:hover span {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.prevButton {
+  left: 0;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.nextButton {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+/* Индикаторы (точки) - увеличенная зона касания */
+.carouselDots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+  padding: 8px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  border-radius: 40px;
+}
+
+.carouselDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px;
+  margin: -8px;
+  background-clip: content-box;
+  position: relative;
+}
+
+/* Дополнительная область для касания точки */
+.carouselDot::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+}
+
+.carouselDot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.activeDot {
+  background-color: white;
+  width: 24px;
+  border-radius: 5px;
+}
+
+/* Стили для текста в карусели */
+.carouselContainer .bannerTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.carouselContainer .bannerSubtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.carouselContainer .startButton {
+  background: white;
+  color: #475729;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.carouselContainer .startButton:hover {
+  background: #f0f0f0;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Убираем темную полосу между каруселью и блоком howWork */
+.howWork {
+  margin-top: 0;
+  padding-top: 2rem;
+}
+
+/* Анимация появления текста сбоку */
+/* Появление слева (для следующего слайда) */
+.slideEnterFromLeft {
+  animation: slideInFromLeft 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Появление справа (для предыдущего слайда) */
+.slideEnterFromRight {
+  animation: slideInFromRight 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Исчезновение влево */
+.slideExitLeft {
+  animation: slideOutToLeft 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+}
+
+/* Исчезновение вправо */
+.slideExitRight {
+  animation: slideOutToRight 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+}
+
+@keyframes slideOutToRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+}
+
+/* Адаптивность для карусели на мобильных устройствах */
+@media (max-width: 768px) {
+  .carouselContainer {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .carouselContainer .bannerTitle {
+    font-size: 2.2rem;
+  }
+
+  .carouselContainer .bannerSubtitle {
+    font-size: 1rem;
+  }
+
+  .carouselContainer .carouselButton {
+    width: 20%;
+  }
+
+  .carouselContainer .carouselButton span {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .prevButton {
+    padding-left: 10px;
+  }
+
+  .nextButton {
+    padding-right: 10px;
+  }
+
+  .carouselDots {
+    bottom: 15px;
+    gap: 8px;
+    padding: 8px 15px;
+  }
+
+  .carouselDot {
+    padding: 6px;
+    margin: -6px;
+  }
+
+  .activeDot {
+    width: 20px;
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOutToLeft {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+  }
+
+  @keyframes slideOutToRight {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: TranslateX(40px);
+    }
+  }
+}
+
+/* app/page.module.css - только изменения для карусели */
+
+/* ========== КАРУСЕЛЬ ========== */
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+}
+
+/* Затемнение фона */
+.carouselContainer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 21, 12, 0.7);
+  z-index: 1;
+}
+
+/* Фоны для разных слайдов */
+.heroBg {
+  background-image: url('/les.jpg');
+}
+
+.forestBg {
+  background-image: url('/les.jpg');
+}
+
+.dumpBg {
+  background-image: url('/les.jpg');
+}
+
+.goalBg {
+  background-image: url('/les.jpg');
+}
+
+/* Контент поверх фона - ЦЕНТРИРОВАНИЕ */
+.carouselContainer .overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: none;
+  padding: 0;
+}
+
+.contentWrapper {
+  max-width: 900px;
+  width: 100%;
+  padding: 2rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Единые стили для текста на ВСЕХ слайдах */
+.carouselContainer .bannerTitle {
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.carouselContainer .bannerSubtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.carouselContainer .bannerSubtitle2 {
+  font-size: 2.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.carouselContainer .startButton {
+  background: white;
+  color: #475729;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.carouselContainer .startButton:hover {
+  background: #f0f0f0;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Кнопки навигации карусели */
+.carouselContainer .carouselButton {
+  position: absolute;
+  top: 0;
+  transform: none;
+  background-color: transparent;
+  border: none;
+  width: 15%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.carouselContainer .carouselButton:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Стрелка внутри кнопки */
+.carouselContainer .carouselButton span {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.carouselContainer .carouselButton:hover span {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.prevButton {
+  left: 0;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.nextButton {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+/* Индикаторы (точки) */
+.carouselDots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  backdrop-filter: blur(4px);
+}
+
+.carouselDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carouselDot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.activeDot {
+  background-color: white;
+  width: 24px;
+  border-radius: 5px;
+}
+
+/* Убираем темную полосу между каруселью и блоком howWork */
+.howWork {
+  margin-top: 0;
+  padding-top: 2rem;
+}
+
+/* Анимация появления текста сбоку */
+.slideEnterFromLeft {
+  animation: slideInFromLeft 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.slideEnterFromRight {
+  animation: slideInFromRight 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.slideExitLeft {
+  animation: slideOutToLeft 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+}
+
+.slideExitRight {
+  animation: slideOutToRight 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+}
+
+@keyframes slideOutToRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+}
+
+/* Адаптивность для карусели на мобильных устройствах */
+@media (max-width: 768px) {
+  .carouselContainer {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .carouselContainer .bannerTitle {
+    font-size: 2.2rem;
+  }
+
+  .carouselContainer .bannerSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .carouselContainer .carouselButton {
+    width: 20%;
+  }
+
+  .carouselContainer .carouselButton span {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .prevButton {
+    padding-left: 10px;
+  }
+
+  .nextButton {
+    padding-right: 10px;
+  }
+
+  .carouselDots {
+    bottom: 15px;
+    gap: 8px;
+    padding: 8px 15px;
+  }
+
+  .activeDot {
+    width: 20px;
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOutToLeft {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+  }
+
+  @keyframes slideOutToRight {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+  }
+}
+
+/* ========== КАРУСЕЛЬ ========== */
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+}
+
+/* Затемнение фона */
+.carouselContainer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 21, 12, 0.7);
+  z-index: 1;
+}
+
+/* Фоны для разных слайдов */
+.heroBg {
+  background-image: url('/les.jpg');
+}
+
+.forestBg {
+  background-image: url('/les.jpg');
+}
+
+.dumpBg {
+  background-image: url('/les.jpg');
+}
+
+.goalBg {
+  background-image: url('/les.jpg');
+}
+
+/* Контент поверх фона */
+.carouselContainer .overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: none;
+  padding: 0;
+}
+
+.contentWrapper {
+  max-width: 1000px;
+  width: 100%;
+  padding: 2rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Увеличенные единые стили для текста на ВСЕХ слайдах */
+.carouselContainer .bannerTitle {
+  font-size: 5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.carouselContainer .bannerSubtitle {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.carouselContainer .startButton {
+  background: white;
+  color: #475729;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.carouselContainer .startButton:hover {
+  background: #f0f0f0;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Кнопки навигации карусели */
+.carouselContainer .carouselButton {
+  position: absolute;
+  top: 0;
+  transform: none;
+  background-color: transparent;
+  border: none;
+  width: 15%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.carouselContainer .carouselButton:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Стрелка внутри кнопки - увеличенная */
+.carouselContainer .carouselButton span {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.carouselContainer .carouselButton:hover span {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.prevButton {
+  left: 0;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.nextButton {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+/* Индикаторы (точки) - увеличенные */
+.carouselDots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  z-index: 10;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 40px;
+  backdrop-filter: blur(8px);
+}
+
+.carouselDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carouselDot:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.2);
+}
+
+.activeDot {
+  background-color: white;
+  width: 32px;
+  border-radius: 7px;
+}
+
+/* Убираем темную полосу между каруселью и блоком howWork */
+.howWork {
+  margin-top: 0;
+  padding-top: 2rem;
+}
+
+/* Анимация появления текста сбоку */
+.slideEnterFromLeft {
+  animation: slideInFromLeft 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.slideEnterFromRight {
+  animation: slideInFromRight 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.slideExitLeft {
+  animation: slideOutToLeft 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+}
+
+.slideExitRight {
+  animation: slideOutToRight 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+}
+
+@keyframes slideOutToRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+}
+
+/* Адаптивность для карусели на мобильных устройствах */
+@media (max-width: 768px) {
+  .carouselContainer {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .carouselContainer .bannerTitle {
+    font-size: 2.5rem;
+  }
+
+  .carouselContainer .bannerSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .carouselContainer .startButton {
+    padding: 0.75rem 1.8rem;
+    font-size: 1rem;
+  }
+
+  .carouselContainer .carouselButton {
+    width: 20%;
+  }
+
+  .carouselContainer .carouselButton span {
+    width: 44px;
+    height: 44px;
+    font-size: 28px;
+  }
+
+  .prevButton {
+    padding-left: 10px;
+  }
+
+  .nextButton {
+    padding-right: 10px;
+  }
+
+  .carouselDots {
+    bottom: 20px;
+    gap: 12px;
+    padding: 8px 18px;
+  }
+
+  .carouselDot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .activeDot {
+    width: 24px;
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOutToLeft {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+  }
+
+  @keyframes slideOutToRight {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+  }
+}
+
+/* ========== СТИЛИ ДЛЯ РАЗНЫХ СЛАЙДОВ ========== */
+
+/* Слайд 1 (hero) — уменьшенные шрифты */
+.heroSlide .bannerTitle {
+  font-size: 3rem !important;
+}
+
+.heroSlide .bannerSubtitle {
+  font-size: 1.3rem !important;
+}
+
+/* Слайды 2, 3, 4 (лес, свалка, цель) — стиль h2/h3 */
+.nonHeroSlide .bannerTitle {
+  font-size: 2.5rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+}
+
+.nonHeroSlide .bannerSubtitle {
+  font-size: 1.8rem !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+  .heroSlide .bannerTitle {
+    font-size: 2rem !important;
+  }
+
+  .heroSlide .bannerSubtitle {
+    font-size: 1rem !important;
+  }
+
+  .nonHeroSlide .bannerTitle {
+    font-size: 1.8rem !important;
+  }
+
+  .nonHeroSlide .bannerSubtitle {
+    font-size: 1.2rem !important;
+  }
+}

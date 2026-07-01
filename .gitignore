@@ -1,0 +1,7 @@
+.next/
+node_modules/
+.env
+dist/
+.DS_Store
+*.log
+backend/waste_detector/media/

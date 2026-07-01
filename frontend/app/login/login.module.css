@@ -1,0 +1,275 @@
+/* login.module.css */
+.main {
+    min-height: 100vh;
+    background-image: url('/info6.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.window {
+    margin-top: 6rem;
+    position: relative;
+    width: 40rem;
+    min-height: 20rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.main h1 {
+    font-size: 40px;
+    color: #172c22;
+    padding: 30px 60px;
+    padding-bottom: 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+.main p {
+    font-size: 22px;
+    color: #172c22;
+    padding: 10px 60px;
+    padding-top: 0;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Стили формы */
+.form {
+    padding: 0 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-size: 24px;
+    font-weight: 600;
+    color: #172c22;
+    margin-left: 5px;
+}
+
+.input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    background: white;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    color: #172c22;
+
+}
+
+.input:focus {
+    outline: none;
+    border-color: #172c22;
+    box-shadow: 0 0 0 3px rgba(23, 44, 34, 0.1);
+}
+
+.input:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.error {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: center;
+    border-left: 4px solid #dc2626;
+}
+
+.button {
+    width: 100%;
+    padding: 14px;
+    background-color: #172c22;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    font-family: inherit;
+}
+
+.button:hover:not(:disabled) {
+    background-color: #2a4a3a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(23, 44, 34, 0.3);
+}
+
+.button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Дополнительные опции (опционально) */
+.extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-top: -10px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #172c22;
+}
+
+.checkbox input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.forgotLink {
+    color: #172c22;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.forgotLink:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .window {
+        width: 90%;
+        margin-top: 4rem;
+        min-height: auto;
+    }
+
+    .main h1 {
+        font-size: 28px;
+        padding: 20px 30px;
+        padding-bottom: 0;
+    }
+
+    .main p {
+        font-size: 18px;
+        padding: 10px 30px;
+        padding-top: 0;
+    }
+
+    .form {
+        padding: 0 25px 30px 25px;
+        gap: 20px;
+    }
+
+    .label {
+        font-size: 16px;
+    }
+
+    .input {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .button {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .window {
+        width: 95%;
+        margin-top: 3rem;
+    }
+
+    .main h1 {
+        font-size: 24px;
+        padding: 15px 20px;
+        padding-bottom: 0;
+    }
+
+    .main p {
+        font-size: 16px;
+        padding: 8px 20px;
+        padding-top: 0;
+    }
+
+    .form {
+        padding: 0 20px 25px 20px;
+        gap: 15px;
+    }
+
+    .extra {
+        font-size: 12px;
+    }
+}
+
+/* Добавьте в конец файла login.module.css */
+.registerLink {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    color: #172c22;
+    font-size: 14px;
+}
+
+.registerLink a {
+    color: #172c22;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-left: 5px;
+}
+
+.registerLink a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* Адаптивность для мобильных устройств - обновите существующий медиа-запрос */
+@media (max-width: 768px) {
+    /* ... существующие стили ... */
+
+    .registerLink {
+        margin-top: 15px;
+        padding-top: 12px;
+        font-size: 12px;
+    }
+}
+
+/* app/login/login.module.css */
+.success {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
